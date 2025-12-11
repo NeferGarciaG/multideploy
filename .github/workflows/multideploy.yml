@@ -1,0 +1,20 @@
+name: Container Echo
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+  
+jobs:
+  echo-job:
+    runs-on: ubuntu-latest
+
+    container:
+      image: alpine:3.22
+    steps:
+      - name: Print message
+        run: echo "Workflow running inside alpine container"
